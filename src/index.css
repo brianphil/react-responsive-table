@@ -1,13 +1,62 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container-table {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.tab-body {
+  list-style: none;
+  display: flex;
+  flex-flow: left;
+  flex-direction: row;
+  align-items: left;
+  margin: 1px;
+}
+.tab-item {
+  border: none;
+  margin-left: 1em;
+  padding: 0.2em;
+  cursor: pointer;
+}
+li.active {
+  border-bottom: 2px solid #16f;
+  color: #16f;
+}
+.table {
+  border: none;
+  border-bottom: 2px solid rgb(34, 51, 255, 0.2);
+  margin: 0 0.5em 0 0.5em;
+  border-top: 2px solid rgb(34, 51, 255, 0.2);
+}
+th.table-header {
+  border: none;
+  font-weight: bold;
+  padding-left: 0.2em;
+}
+.header-row {
+  border-bottom: 1px solid rgb(51, 51, 51, 0.2);
+  margin-left: 0.2em;
+}
+.header-title {
+  border-left: 1px solid rgb(51, 51, 51, 0.2);
+  border-bottom: 1px solid rgb(51, 51, 51, 0.2);
+  text-align: left;
+  padding: 0.5em;
+}
+.table-body {
+  border: none;
+  border-right: 0.5em solid #333;
+  margin-left: 0.2em;
+}
+.table-data {
+  border: none;
+  margin-left: 0.2em;
 }
