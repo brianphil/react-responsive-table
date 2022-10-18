@@ -15,20 +15,30 @@ body {
 .tab-body {
   list-style: none;
   display: flex;
-  flex-flow: left;
+  flex-flow:wrap;
   flex-direction: row;
-  align-items: left;
+  align-items:flex-start;
   margin: 1px;
+  overflow-wrap: break-word;
 }
 .tab-item {
   border: none;
   margin-left: 1em;
   padding: 0.2em;
   cursor: pointer;
+  display: flex;
+  flex-flow:wrap;
 }
 li.active {
   border-bottom: 2px solid #16f;
   color: #16f;
+}
+li.title{
+  font-style: italic;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: center;
 }
 .table {
   border: none;
