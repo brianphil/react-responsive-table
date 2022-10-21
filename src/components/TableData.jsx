@@ -6,7 +6,7 @@ const TableData = ({isFirstTab, data, range}) => {
       <tbody className="table-body">
         {data.map((d, index1) => {
           return (
-            <tr key={Object.values(d)[0]}>
+            <tr key={Object.values(d)[0]} className='data-line'>
               {isFirstTab ? (
                 <></>
               ) : (

@@ -45,6 +45,7 @@ li.title{
   border-bottom: 2px solid rgb(34, 51, 255, 0.2);
   margin: 0 0.5em 0 0.5em;
   border-top: 2px solid rgb(34, 51, 255, 0.2);
+  min-width: 95vw;
 }
 th.table-header {
   border: none;
@@ -66,7 +67,14 @@ th.table-header {
   border-right: 0.5em solid #333;
   margin-left: 0.2em;
 }
-.table-data {
+td.table-data {
   border: none;
+  border-bottom:rgb(34, 51, 255, 0.2);
   margin-left: 0.2em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+tr.data-line{
+  border: none;
+  border-bottom:rgb(34, 51, 255, 0.2);
 }

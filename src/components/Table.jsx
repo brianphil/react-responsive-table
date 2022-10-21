@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Columns from "./Columns";
 import TableData from "./TableData";
 import Tabs from "./Tabs";
-const Table = ({data, columnNumber = 2, responsiveTable = true, columns }) => {
+const Table = ({data, columnNumber=2, responsiveTable = true, columns }) => {
   const groupBy = (n, cols) => {
     let groupedArray = [];
     for (let i = 0; i < cols.length; i += n) {
@@ -48,10 +48,10 @@ const Table = ({data, columnNumber = 2, responsiveTable = true, columns }) => {
   } else {
     const newRange = {
       start: columns[0],
-      end: columns.length - 1,
+      end: columns.length,
     };
     return(
-      <table className="table" style={{minWidth: '95vw'}}>
+      <table className="table">
           <Columns columns={columns} isFirstTab={isFirstTab} range={newRange} />
           <TableData isFirstTab={isFirstTab} data={data} range={newRange} />
     </table>
