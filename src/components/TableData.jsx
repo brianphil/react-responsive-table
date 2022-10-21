@@ -1,20 +1,32 @@
-import React from 'react'
+import React from "react";
 
-const TableData = () => {
+const TableData = ({isFirstTab, data, range}) => {
   return (
     <>
-    <tr className='data'>
-        <td className='data'>Item 1</td>
-        <td className='data'>Item 2</td>
-        <td>Item 3</td>
-        <td>Item 4</td>
-        <td>Item 5</td>
-        <td>Item 6</td>
-        <td>Item 7</td>
-        <td>Item 8</td>
-    </tr>
+      <tbody className="table-body">
+        {data.map((d, index1) => {
+          return (
+            <tr key={Object.values(d)[0]}>
+              {isFirstTab ? (
+                <></>
+              ) : (
+                <td key={index1} className="table-data">
+                  {Object.values(d)[0]}
+                </td>
+              )}
+              {Object.values(d)
+                .slice(range.start, range.end)
+                .map((v, index) => (
+                  <td key={index} className="table-data">
+                    {v}
+                  </td>
+                ))}
+            </tr>
+          );
+        })}
+      </tbody>
     </>
-  )
-}
+  );
+};
 
-export default TableData
+export default TableData;

@@ -1,18 +1,24 @@
 import React from "react";
 
-const Columns = () => {
+const Columns = ({ columns, isFirstTab=true, range }) => {
   return (
     <>
-      <thead className="column">
-        <tr>
-          <th>Header 1</th>
-          <th>Header 2</th>
-          <th>Header 3</th>
-          <th>Header 4</th>
-          <th>Header 5</th>
-          <th>Header 6</th>
-          <th>Header 7</th>
-          <th>Header 8</th>
+      <thead className="table-header">
+        <tr className="header-row">
+          {isFirstTab ? (
+            <></>
+          ) : (
+            <th key={45852} className="header-title">
+              {columns[0]}
+            </th>
+          )}
+          {columns.slice(range.start, range.end).map((c, index) => {
+            return (
+              <th key={index} className="header-title">
+                {c}
+              </th>
+            );
+          })}
         </tr>
       </thead>
     </>

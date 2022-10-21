@@ -1,16 +1,26 @@
-import React from 'react'
+import React from "react";
 
-const Tabs = () => {
+const Tabs = ({ groupedCols, currentTab, handleTabClick }) => {
   return (
     <>
-    <ul className='table tab'>
-        <li>Tab 1</li>
-        <li className='active-tab'>Tab 2</li>
-        <li>Tab 3</li>
-        <li>Tab 5</li>
-    </ul>
+      <ul className="tab-body">
+        <li className="tab-item title">Columns</li>
+        {groupedCols.map((tab, index) => {
+          return (
+            <li
+              key={index}
+              id={tab.toString()}
+              value={index}
+              onClick={handleTabClick}
+              className={index === currentTab ? "tab-item active" : "tab-item"}
+            >
+              {"(" + tab.toString() + ")"}
+            </li>
+          );
+        })}
+      </ul>
     </>
-  )
-}
+  );
+};
 
-export default Tabs
+export default Tabs;
