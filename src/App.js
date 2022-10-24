@@ -1,50 +1,62 @@
 import React, { useState, useLayoutEffect } from "react";
 import Table from "./components/Table";
 import { data } from "./components/dataset";
+import Pagination from "./components/Pagination";
 
 function App() {
   const [vw, setVW] = useState(
     Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
   );
-  let columnNumber=3;
+  let columnNumber = 3;
   let responsive = true;
   if (vw <= 640) {
     columnNumber = 2;
     responsive = true;
-
   } else if (vw > 640 && vw <= 1007) {
     columnNumber = 4;
     responsive = true;
-
   } else {
     responsive = false;
-
   }
   useLayoutEffect(() => {
     const getWidth = (e) => {
       setVW(window.innerWidth);
     };
     window.addEventListener("resize", getWidth);
-    
-    // console.log("Window width: ", vw);
+
     return () => {
       window.removeEventListener("resize", getWidth);
     };
-  },[vw, setVW]);
-  // const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+  }, [vw, setVW]);
 
-  // Small (smaller than 640px)
-  // Medium (641px to 1007px)
-  // Large (1008px and larger)
   const columns = ["Name", "Profession", "City", "Address", "Date Registered"];
 
+  const [currentPage, setcurrentPage] = useState(1);
+  const [dataPerPage, setdataPerPage] = useState(10);
+
+  const indexOfLastPage = currentPage * dataPerPage;
+  const indexOfFirstPage = indexOfLastPage - dataPerPage;
+  const curreData = data.slice(indexOfFirstPage, indexOfLastPage);
+
+  const selectedPage = (page) => {
+    setcurrentPage(page);
+  };
   return (
-    <Table
-      data={data}
-      columns={columns}
-      responsiveTable={responsive}
-      columnNumber={columnNumber}
-    />
+    <>
+      <Table
+        data={curreData}
+        columns={columns}
+        responsiveTable={responsive}
+        columnNumber={columnNumber}
+      />
+      <Pagination
+        dataPerPage={dataPerPage}
+        totalData={data.length}
+        selectedPage={selectedPage}
+        setcurrentPage={setcurrentPage}
+        currentPage={currentPage}
+      />
+    </>
   );
 }
 

@@ -78,3 +78,21 @@ tr.data-line{
   border: none;
   border-bottom:rgb(34, 51, 255, 0.2);
 }
+
+ul.pagination{
+  list-style: none;
+  margin-left: 0.2em;
+  padding: 1em;
+  text-align: center;
+  display: flex;
+  flex-flow: row;
+
+}
+li.pagination{
+ cursor: pointer;
+ padding: 1em;
+}
+li.pagination:hover{
+background-color: aquamarine;  
+
+}
