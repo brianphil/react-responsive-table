@@ -90,9 +90,18 @@ ul.pagination{
 }
 li.pagination{
  cursor: pointer;
- padding: 1em;
+ padding: .5em;
+ border-radius: .5em;
+ padding-left: 1em;
+ padding-right: 1em;
+ margin: .2em;
 }
 li.pagination:hover{
-background-color: aquamarine;  
+background-color: rgb(17, 102, 255,.8)  
 
+}
+
+li.active-page{
+  background-color: #16f;
+  color: white;
 }
