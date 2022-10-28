@@ -30,8 +30,8 @@ body {
   flex-flow:wrap;
 }
 li.active {
-  border-bottom: 2px solid #16f;
-  color: #16f;
+  border-bottom: 2px solid rgb(0, 152, 121);
+  color: rgb(0, 152, 121);
 }
 li.title{
   font-style: italic;
@@ -97,11 +97,48 @@ li.pagination{
  margin: .2em;
 }
 li.pagination:hover{
-background-color: rgb(17, 102, 255,.8)  
+background-color: rgb(0, 152, 121,.5);
 
 }
 
 li.active-page{
-  background-color: #16f;
+  background-color: rgb(0, 152, 121);
   color: white;
+}
+/** new table style-*/
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px auto;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 98vw;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+  background-color: rgb(0, 152, 121);
+  color: #ffffff;
+  text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    flex-wrap: wrap;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
 }

@@ -4,7 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
-
+#git SSH private key
+/git_shh
 # testing
 /coverage
 

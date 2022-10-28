@@ -39,7 +39,7 @@ const Table = ({data, columnNumber=2, responsiveTable = true, columns }) => {
           currentTab={currentTab}
           handleTabClick={handleTabClick}
         />
-        <table className="table">
+        <table className="styled-table">
           <Columns columns={columns} isFirstTab={isFirstTab} range={range} />
           <TableData isFirstTab={isFirstTab} data={data} range={range} />
         </table>
@@ -51,7 +51,7 @@ const Table = ({data, columnNumber=2, responsiveTable = true, columns }) => {
       end: columns.length,
     };
     return(
-      <table className="table">
+      <table className="styled-table">
           <Columns columns={columns} isFirstTab={isFirstTab} range={newRange} />
           <TableData isFirstTab={isFirstTab} data={data} range={newRange} />
     </table>

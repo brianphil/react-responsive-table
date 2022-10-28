@@ -17,14 +17,14 @@ const Pagination = ({
       case 1: {
         if (currentPage === 1) return;
         else {
-          setcurrentPage((prev) => prev - 1);
-          setisActivePage(currentPage - 1);
+          setcurrentPage(currentPage--);
+          setisActivePage(currentPage--);
         }
       }
       case 2: {
         if (currentPage === pageNumbers.length) return;
         else {
-          setcurrentPage((prev) => prev + 1);
+          setcurrentPage(currentPage + 1);
           setisActivePage(currentPage + 1);
         }
       }
@@ -38,9 +38,10 @@ const Pagination = ({
 
   return (
     <ul className="pagination">
+      {isActivePage === 1? <></>:
       <li onClick={() => navigatePage(1)} className="pagination">
         {"<<Prev"}
-      </li>
+      </li>}
       {pageNumbers.map((page) => {
         return (
           <li
@@ -54,9 +55,10 @@ const Pagination = ({
           </li>
         );
       })}
+      {isActivePage === pageNumbers.length?<></>:
       <li onClick={() => navigatePage(2)} className="pagination">
         {"Next>>"}
-      </li>
+      </li>}
     </ul>
   );
 };
