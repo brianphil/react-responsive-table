@@ -20,6 +20,7 @@ const Pagination = ({
           setcurrentPage(currentPage--);
           setisActivePage(currentPage--);
         }
+        break;
       }
       case 2: {
         if (currentPage === pageNumbers.length) return;
@@ -27,7 +28,10 @@ const Pagination = ({
           setcurrentPage(currentPage + 1);
           setisActivePage(currentPage + 1);
         }
+        break;
       }
+      default:
+        return null;
     }
   };
 
@@ -52,7 +56,7 @@ const Pagination = ({
             onClick={() => handleClick(page)}
             key={page}
             className={
-              isActivePage == page ? "pagination active-page" : "pagination"
+              isActivePage === page ? "pagination active-page" : "pagination"
             }
           >
             {page}
