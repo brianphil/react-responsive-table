@@ -10,7 +10,8 @@
 
 # production
 /build
-
+#git SSH private key
+/git_shh
 # misc
 .DS_Store
 .env.local

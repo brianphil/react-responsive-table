@@ -29,6 +29,7 @@ function App() {
     };
   }, [vw, setVW]);
 
+  const paginationSet = true;
   const columns = ["Name", "Profession", "City", "Address", "Date Registered"];
 
   const [currentPage, setcurrentPage] = useState(1);
@@ -44,18 +45,22 @@ function App() {
   return (
     <>
       <Table
-        data={curreData}
+        data={paginationSet? curreData: data}
         columns={columns}
         responsiveTable={responsive}
         columnNumber={columnNumber}
       />
-      <Pagination
-        dataPerPage={dataPerPage}
-        totalData={data.length}
-        selectedPage={selectedPage}
-        setcurrentPage={setcurrentPage}
-        currentPage={currentPage}
-      />
+      {paginationSet ? (
+        <Pagination
+          dataPerPage={dataPerPage}
+          totalData={data.length}
+          selectedPage={selectedPage}
+          setcurrentPage={setcurrentPage}
+          currentPage={currentPage}
+        />
+      ) : (
+        <></>
+      )}
     </>
   );
 }
