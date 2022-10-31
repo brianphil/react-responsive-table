@@ -87,7 +87,6 @@ li.disabled-control:hover{
   min-width: 98vw;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
-
 .styled-table thead tr {
   background-color: rgb(0, 152, 121);
   color: #ffffff;
