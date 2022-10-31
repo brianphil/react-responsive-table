@@ -13,6 +13,7 @@
 /build
 #git SSH private key
 /git_shh
+/git_shh.pub
 # misc
 .DS_Store
 .env.local
