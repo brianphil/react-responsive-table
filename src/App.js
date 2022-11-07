@@ -1,6 +1,7 @@
 import React, { useState, useLayoutEffect } from "react";
 import Table from "./components/Table";
-import { data } from "./components/dataset";
+// import { data } from "./components/dataset";
+import {data} from './components/secdataset';
 import Pagination from "./components/Pagination";
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
   }, [vw, setVW]);
 
   const paginationSet = true;
-  const columns = ["Name", "Profession", "City", "Address", "Date Registered"];
+  const columns = ["Name", "Profession", "City", "Address", "Date Registered", "Letd", "Grat", "Uysd", "Piud", "Jgd"," Trwes"];
 
   const [currentPage, setcurrentPage] = useState(1);
   const [dataPerPage, setdataPerPage] = useState(10);

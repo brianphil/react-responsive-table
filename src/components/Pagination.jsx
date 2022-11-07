@@ -17,16 +17,16 @@ const Pagination = ({
       case 1: {
         if (currentPage === 1) return;
         else {
-          setcurrentPage(currentPage--);
-          setisActivePage(currentPage--);
+          setcurrentPage(prev=>{return prev -1});
+          setisActivePage(prev=>{return prev -1});
         }
         break;
       }
       case 2: {
         if (currentPage === pageNumbers.length) return;
         else {
-          setcurrentPage(currentPage + 1);
-          setisActivePage(currentPage + 1);
+          setcurrentPage(prev=> {return prev + 1});
+          setisActivePage(prev=> {return prev + 1});
         }
         break;
       }

@@ -37,6 +37,7 @@ body {
 li.active {
   border-bottom: 2px solid rgb(0, 152, 121);
   color: rgb(0, 152, 121);
+  /* background-color:#dddddd; */
 }
 
 ul.pagination{
@@ -91,7 +92,7 @@ li.disabled-control:hover{
   background-color: rgb(0, 152, 121);
   color: #ffffff;
   text-align: left;
-  
+  min-width: 98vw;
 }
 
 .styled-table thead tr{
