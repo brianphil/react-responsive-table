@@ -14,7 +14,7 @@ const Pagination = ({
   const [isActivePage, setisActivePage] = useState(1);
   const navigatePage = (param) => {
     switch (param) {
-      case 1: {
+      case 'back': {
         if (currentPage === 1) return;
         else {
           setcurrentPage(prev=>{return prev -1});
@@ -22,7 +22,7 @@ const Pagination = ({
         }
         break;
       }
-      case 2: {
+      case 'next': {
         if (currentPage === pageNumbers.length) return;
         else {
           setcurrentPage(prev=> {return prev + 1});
@@ -43,7 +43,7 @@ const Pagination = ({
   return (
     <ul className="pagination">
       <li
-        onClick={() => (isActivePage === 1 ? "" : navigatePage(1))}
+        onClick={() => (isActivePage === 1 ? "" : navigatePage('back'))}
         className={
           isActivePage === 1 ? "pagination disabled-control" : "pagination"
         }
@@ -64,7 +64,7 @@ const Pagination = ({
         );
       })}
       <li
-        onClick={() => (isActivePage === pageNumbers.length ? "" : navigatePage(2))}
+        onClick={() => (isActivePage === pageNumbers.length ? "" : navigatePage('next'))}
         className={
           isActivePage === pageNumbers.length ? "pagination disabled-control" : "pagination"
         }

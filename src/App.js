@@ -1,6 +1,5 @@
 import React, { useState, useLayoutEffect } from "react";
 import Table from "./components/Table";
-// import { data } from "./components/dataset";
 import {data} from './components/secdataset';
 import Pagination from "./components/Pagination";
 
@@ -8,27 +7,22 @@ function App() {
   const [vw, setVW] = useState(
     Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
   );
-  let columnNumber = 3;
-  let responsive = true;
-  if (vw <= 640) {
-    columnNumber = 2;
-    responsive = true;
-  } else if (vw > 640 && vw <= 1007) {
-    columnNumber = 4;
-    responsive = true;
-  } else {
-    responsive = false;
-  }
+
+  let columnNumber = (vw <= 640) ?  2: (vw > 640 && vw <= 1007)? 4: 3;
+
+  let responsive = columnNumber===2 || columnNumber ===4 ? true: false;
+
   useLayoutEffect(() => {
     const getWidth = (e) => {
-      setVW(window.innerWidth);
+      setVW( Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0));
     };
     window.addEventListener("resize", getWidth);
 
+    console.log("Use layout effect rendered columns: ",columnNumber);
     return () => {
       window.removeEventListener("resize", getWidth);
     };
-  }, [vw, setVW]);
+  }, [columnNumber]);
 
   const paginationSet = true;
   const columns = ["Name", "Profession", "City", "Address", "Date Registered", "Letd", "Grat", "Uysd", "Piud", "Jgd"," Trwes"];
@@ -43,6 +37,7 @@ function App() {
   const selectedPage = (page) => {
     setcurrentPage(page);
   };
+
   return (
     <>
       <Table
@@ -66,4 +61,4 @@ function App() {
   );
 }
 
-export default App;
+export default React.memo(App);

@@ -6,7 +6,7 @@ const Columns = ({ columns, isFirstTab=true, range }) => {
       <thead>
         <tr>
           {isFirstTab ? (
-            <></>
+            null
           ) : (
             <th key={45852}>
               {columns[0]}

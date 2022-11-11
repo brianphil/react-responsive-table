@@ -39,6 +39,12 @@ li.active {
   color: rgb(0, 152, 121);
   /* background-color:#dddddd; */
 }
+.tab-item:hover {
+  /* border-bottom: 2px solid rgba(0, 152, 121,0.3); */
+  /* color: rgba(0, 152, 121,0.6); */
+  font-weight:600;
+  /* background-color:#dddddd; */
+}
 
 ul.pagination{
   list-style: none;
